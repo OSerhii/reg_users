@@ -17,7 +17,4 @@ ${ROLE}  1
   ...  ELSE  Create Dictionary  &{LEGAL_TYPE}
   :FOR  ${key}  IN  @{types.keys()}
   \  ${CREDENTIALS}=  Зареєструвати користувачів  ${key}  ${types["${key}"]}
-  Capture Page Screenshot
-  Wait Until Page Contains Element  xpath=//div[contains(@class, "alert-success")]
-  Capture Page Screenshot
   Log Many  ${CREDENTIALS}

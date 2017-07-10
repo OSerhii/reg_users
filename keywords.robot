@@ -8,7 +8,7 @@ Test Setup
   Open Browser  http://tender.byustudio.in.ua  Firefox
 
 Test Teardown
-  Close Browser
+  Close All Browsers
 
 Підготувати дані для реєстрації
   [Arguments]  ${role}  ${type}  ${tax}
@@ -28,6 +28,7 @@ Test Teardown
 
 Зареєструвати користувача
   [Arguments]  ${reg_data}
+  Go To  http://tender.byustudio.in.ua
   Click Element  xpath=//*[@href="/register"]
   Wait Until Element Is Visible  id=companies-is_seller  10
   Select From List By Value  id=companies-is_seller  ${ROLE}
@@ -77,4 +78,4 @@ Test Teardown
   Click Element  id=user-info3
   Click Element  id=user-subscribe_status
   Click Element  xpath=//button[contains(@class,"mk-btn_accept")]
-
+  Wait Until Page Contains Element  xpath=//div[contains(@class, "alert-success")]  30
