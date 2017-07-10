@@ -48,6 +48,7 @@ Test Teardown
   Input Text  id=companies-legalname_en  ${reg_data.legalname_en}
   Run Keyword If  ${ROLE} == 0  Select From List By Value  id=companies-customer_type  general
   Input Text  id=companies-identifier  ${reg_data.identifier}
+  Capture Page Screenshot
   # БАНКІВСЬКІ РЕКВІЗИТИ
   Input Text  id=companies-mfo  ${reg_data.mfo}
   Input Text  id=companies-bank_account  ${reg_data.bank_account}
@@ -63,6 +64,7 @@ Test Teardown
   ...  AND  Input Text  id=companies-userposition  ${reg_data.userposition}
   ...  AND  Input Text  id=companies-userdirectiondoc  ${reg_data.userdirectiondoc}
   # УПОВНОВАЖЕНА КОНТАКТНА ОСОБА
+  Capture Page Screenshot
   Input Text  id=persons-username  ${reg_data.persons_username}
   Input Text  id=persons-usersurname  ${reg_data.persons_usersurname}
   Input Text  id=persons-userpatronymic  ${reg_data.persons_userpatronymic}
@@ -75,6 +77,4 @@ Test Teardown
   Click Element  id=user-info3
   Click Element  id=user-subscribe_status
   Click Element  xpath=//button[contains(@class,"mk-btn_accept")]
-
-
 
